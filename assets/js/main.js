@@ -2,7 +2,7 @@
 
 $("#logo").mouseover
 	(function() {
-		$(this).parents().eq(6).stop().animate({ marginTop: '0px'}, 500);
+		$(this).parent().parent().stop().animate({ marginTop: '0px'}, 500);
     })
 
 $(".hiding").mouseleave (function() {
@@ -86,26 +86,6 @@ function update_background() {
 	});
 }
 
-/* Force Click Events Through Header*/
-
-function passThrough(e) {
-    $(".subheader a").each(function() {
-       // check if clicked point (taken from event) is inside element
-       var mouseX = e.pageX;
-       var mouseY = e.pageY;
-       var offset = $(this).offset();
-       var width = $(this).width();
-       var height = $(this).height();
-
-       if (mouseX > offset.left && mouseX < offset.left+width 
-           && mouseY > offset.top && mouseY < offset.top+height) {
-         		$(this).click(); // force click event
-     	}
-    });
-}
-
-$("#header").click(passThrough());
-
 
 /* Document Ready Function */
 
@@ -136,6 +116,8 @@ $(document).ready(function() {
 	  		update_background();
 		}
 	});
+
+	$(".hiding").stop().animate({ marginTop: '-150px' },400);
 
 	$('.subheader').localScroll(
 		{offset: -200});

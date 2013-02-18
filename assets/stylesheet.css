@@ -34,15 +34,15 @@ html, body {
 #header.hiding {
   width: 100%;
   position: fixed;
-  margin-top: -150px;
+  margin-top: 0px;
 }
 
-ul {
+#header ul, .subheader ul, #footer ul {
   margin: 0px;
   padding: 0px;
 }
 
-li {
+#header li, .subheader li, #footer li {
   float: left;
   list-style-type: none;
   display: block;
@@ -50,9 +50,17 @@ li {
   text-align: center;
 }
 
-#logo{
-  margin-top: -50px;
-  width: 100%;
+#to_home {
+  display: block;
+  margin: auto;
+  width: 200px;
+}
+
+#logo {
+  margin: auto;
+  margin-top: -80px;
+  display: block;
+  width: 200px;
 }
 
 
@@ -71,7 +79,7 @@ li {
 
 .subheader a {
   font-family: 'Oswald', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 12px;
@@ -105,19 +113,25 @@ li {
   z-index: -2;
 }
 
-.top {
-  margin-top: 50px;
-  margin-bottom:10px;
+#page a {
+  text-decoration: none;
+  color: #b0b0b0;
 }
 
 .box{
   background-color: rgba(222, 222, 222, 0.8);
   padding: 1px 15px;
+  margin-bottom: 20px;
 }
 
 .center{
   display: block;
   text-align: center;
+}
+
+#quote {
+  margin-top: 100px;
+  margin-bottom: 0px;
 }
 
 #footer {
@@ -145,21 +159,31 @@ h1, h2, h3 {
   text-transform: uppercase;
 }
 
+#about h1 {
+  padding-bottom: 8px;
+  border-bottom: 1px solid #aaa;
+}
+
 h4 {
   color: #d8563a;
   font: 400 36px "Gentium Book Basic";
   font-style: italic;
 }
 
-.profile {
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  border-radius: 100px;
+
+/* Image Styling*/
+
+.index {
+  width: 90%;
+  margin: auto;
   display: block;
-  margin-right: auto;
-  margin-left: auto;
-  width: 350px;
-  padding-left: 15px;
+}
+
+.profile {
+  display: block;
+  margin: auto;
+  width: 97%;
+  border: 7px solid #dedede;
 }
 
 .plus {
