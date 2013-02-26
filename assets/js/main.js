@@ -46,7 +46,7 @@ $("#left").click(function(){
 $("#right").click(function(){
 	horz_current++
 	horz_current = horz_current % $($(".contentbox")[vert_current]).data("no")
-	$.backstretch("/images/" + kind + "/" + $($(".contentbox")[vert_current]).data("pic") + "_" + horz_current + ".jpg"), {speed: 150};
+	$.backstretch("/images/" + kind + "/" + $($(".contentbox")[vert_current]).data("pic") + "_" + horz_current + ".jpg"), {speed: 200};
 })
 
 
@@ -67,7 +67,7 @@ function update_background() {
 	$(".contentbox").each(function(i){
 		if (isScrolledIntoView(this)) {
 			if (i != vert_current) {
-				$.backstretch("/images/" + kind + "/" + $(this).data("pic") + "_" + 0 + ".jpg", {speed: 250}	);
+				$.backstretch("/images/" + kind + "/" + $(this).data("pic") + "_" + 0 + ".jpg", {speed: 350}	);
 				
 				vert_current = i;
 				horz_current = 0;
