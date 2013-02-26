@@ -63,6 +63,10 @@ html, body {
   width: 200px;
 }
 
+#logo img {
+  display: block;
+}
+
 
 /*Second Header*/
 
