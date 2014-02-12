@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>January IV</title>
+    <link rel="stylesheet" type="text/css" href="plugin/css/style.css">
+    <link rel="stylesheet" type="text/css" href="demo/css/demo.css">
+    <script type="text/javascript" src="demo/js/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="plugin/jquery-jplayer/jquery.jplayer.js"></script>
+    <script type="text/javascript" src="plugin/ttw-music-player.js"></script>
+    <script type="text/javascript" src="demo/js/myplaylist.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var description = '"He brought with him -- from the city of ideas to the city of images -- a manuscript. When he began to read this manuscript, it seemed to us that it was crawling with faded and formless blots; one&#8217s eyes could not capture it. When the reading ended, an argument began: we argued that he saw nothing, he argued that we understood nothing. On which note we parted." <i>-- Sigizmund Krzhizanovsky</i><p>The light that hangs in the ailanthus weaves<br>The leaves&#8217 leavetaking overtaking leaves.<br>The actual is real and not imagined, -- still,<br>The eye, so learned in disenchantment, sees<br>Two trees at once, this one of summer&#8217s will,<br>And winter&#8217s one, when no bird will assail<br>The skyline&#8217s hyaline transparencies,<br>Emptying its architecture by degrees.<br><i>-- Howard Moss</i><p><i>Album cover photo: David Guttenfelder</i>';
+
+            $('body').ttwMusicPlayer(myPlaylist, {
+                autoPlay:false, 
+                description:description,
+                jPlayer:{
+                    swfPath:'plugin/jquery-jplayer'
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="fluid-wrapper">
+    <div id="title"></div>
+    <iframe src="https://mapsengine.google.com/map/u/0/embed?mid=z32095cnCV00.k9zA78AOzNUg" ></iframe>
+</div>
+<div id="footer">
+    <a href="https://dl.dropboxusercontent.com/u/10691285/January%20IV.zip" id="download">Download Mix Here</a>
+</div>
+</body>
+</html>
