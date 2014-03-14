@@ -46,7 +46,7 @@
             ratingCallback:null,
             currencySymbol:'',
             buyText:'',
-            tracksToShow:18,
+            tracksToShow:10,
             autoPlay:false,
             jPlayer:{}
         };
