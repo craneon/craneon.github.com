@@ -72,7 +72,7 @@ var myPlaylist = [
         rating:5,
         buy:'#',
         price:'SF',
-        duration:'2:11',
+        duration:'4:29',
         cover:'demo/mix/marchiv.jpg'
     },
 
