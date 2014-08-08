@@ -1,12 +1,12 @@
 /**
  * Credit to CodeBaseHero for structure.
- * april 2014 Playlist - JF Compilation
+ * May 2014 Playlist - JF Compilation
  */
 
 var myPlaylist = [
 
     {
-        mp3:'http://d2xvtlmg27hewc.cloudfront.net/01+A+Little+Lost.mp3',
+        mp3:'https://s3.amazonaws.com/may_iv/01+A+Little+Lost.mp3',
         title:'A Little Lost',
         artist:'Nat Baldwin',
         buy:'#',
@@ -15,7 +15,7 @@ var myPlaylist = [
         cover:'demo/mix/mayiv.jpg'
     },
 
-        {
+    {
         mp3:'http://d2xvtlmg27hewc.cloudfront.net/02+Don%27t+Stop+%27Til+You+Get+Enough.mp3',
         title:'Don&#8217t Stop &#8217Til You Get Enough',
         artist:'Michael Jackson',

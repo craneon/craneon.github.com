@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="plugin/css/style2.css">
     <link rel="stylesheet" type="text/css" href="demo/css/may.css">
     <script type="text/javascript" src="demo/js/jquery-1.6.1.min.js"></script>
-    <script type="text/javascript" src="plugin/jquery-jplayer/jquery.jplayer.js"></script>
+    <script type="text/javascript" src="plugin/jquery-jplayer/jquery.jplayer.min.js"></script>
     <script type="text/javascript" src="plugin/ttw-music-player2.js"></script>
     <script type="text/javascript" src="demo/js/myplaylist_may.js"></script>
 
@@ -15,10 +15,10 @@
             var description = '<i>20 songs, 1 hour 30 minutes</i><p>"Twilight came, and the dusty snow on the sidewalks timidly relfected the pink sky. An old woman at the window sucked spasmodically at a child&#8217s candy ring. I saw a cat with eyes I would later know from Gina. A woman stopped, looked around, and hiked up her stockings, pinching them through her parka and skirt. I was waiting, as I wandered among stores and children&#8217s carts, for the moment when the twilight would turn eactly the same color as my mother&#8217s gums, and suddenly it did...The silent block made me feel shaken and faint, like a blade plunged into the asphalt and broken off. I stood in the middle of the piata, like a statue of a sad hero, and from my pocket I took the paper thin with age and unwrapped the hideous object. I raised the dentures over my head, and the teeth began to glitter, yellow like a salt flame, while the gums disappeared, melting into the matching color of the evening. &#8217Ah, Mamma,&#8217 I whispered in the crazed silence. I stared at the dentures for a few more minutes in the darkening light, until the dusk turned as scarlet as blood in veins, and the dental appliance began to glow with an interior light, as though a gentle fluroescent gas had filled the curved rubber gums..." <p><i>-- Mircca C&#259;rt&#259;rescu,</i> Blinding';
 
             $('body').ttwMusicPlayer(myPlaylist, {
-                autoPlay:false, 
+                autoPlay:true, 
                 description:description,
                 jPlayer:{
-                    swfPath:'plugin/jquery-jplayer'
+                    swfPath:'plugin/jquery-jplayer/Jplayer.swf'
                 }
             });
         });
