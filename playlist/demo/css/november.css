@@ -18,7 +18,7 @@ html { overflow-y: scroll; }
 body {
     background: #000000 url(../images/bg_november3.jpg) 0 0 scroll;
     position:relative;
-    min-height:99%;2
+    min-height:99%;
 }
 
 #title{
