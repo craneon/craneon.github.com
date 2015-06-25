@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>May V</title>
+    <script src="assets/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:900' rel='stylesheet' type='text/css'>
+    <meta content="width=device-width, initial-scale=0.6" name="viewport">
+    <script src="assets/audio2.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/mayv.css">
+    <script>
+      $(function() { 
+        // Setup the player to autoplay the next track
+        var a = audiojs.createAll({
+          trackEnded: function() {
+            var next = $('ol li.playing').next();
+            if (!next.length) next = $('ol li').first();
+            next.addClass('playing').siblings().removeClass('playing');
+            audio.load($('a', next).attr('data-src'));
+            audio.play();
+          }
+        });
+        
+        // Load in the first track
+        var audio = a[0];
+            first = $('ol a').attr('data-src');
+        $('ol li').first().addClass('playing');
+        audio.load(first);
+
+        // Load in a track on click
+        $('ol li').click(function(e) {
+          e.preventDefault();
+          $(this).addClass('playing').siblings().removeClass('playing');
+          audio.load($('a', this).attr('data-src'));
+          audio.play();
+        });
+        // Keyboard shortcuts
+        $(document).keydown(function(e) {
+          var unicode = e.charCode ? e.charCode : e.keyCode;
+             // right arrow
+          if (unicode == 39) {
+            var next = $('li.playing').next();
+            if (!next.length) next = $('ol li').first();
+            next.click();
+            // back arrow
+          } else if (unicode == 37) {
+            var prev = $('li.playing').prev();
+            if (!prev.length) prev = $('ol li').last();
+            prev.click();
+            // spacebar
+          } else if (unicode == 32) {
+            audio.playPause();
+          }
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <!-- <div id="wrapper"> -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8" id="main">
+          <h1>may v</h1>
+          <h2 id = "map-text"><a href=#>MAP</a></h2>
+          <div class="col-md-12" id="map" style="overflow:hidden; display: none">
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=z0-UsCvVzVp8.kVjmFdQF7ejM" width="100%" height="530"></iframe>
+          </div>
+          <h2 id = "cover-text"><a href=#>COVER</a></h2>
+          <div class="col-md-12" id="cover" style="display: none">
+            <img src="../playlist/assets/images/mayv-cover.jpg">
+          </div>
+          <h2><a href="https://dl.dropboxusercontent.com/u/10691285/April%20V.zip">DOWNLOAD</a></h2>
+        </div>
+        <div class="col-md-4" id="player">
+          <audio preload id="player-bar"></audio>
+          <ol>
+            <li><a href="#" data-src="https://d13hbdfqmlhmre.cloudfront.net/01+Apur+Sansar+(The+World+of+Apu).mp3">Apur Sansar (The World of Apu) - Ravi Shankar</a></li>
+            <li><a href="#" data-src="https://d13hbdfqmlhmre.cloudfront.net/02+Could+Ever+Be+True.mp3">Could Ever Be True - Crashing Hotels</a></li>
+            <li><a href="#" data-src="https://d13hbdfqmlhmre.cloudfront.net/03+Worry.mp3">Worry - Jack Garratt</a></li>
+            <li><a href="#" data-src="https://d13hbdfqmlhmre.cloudfront.net/04+Falling+(Duke+Dumont+Remix).m4a">Falling (Duke Dumont Remix) - HAIM</a></li>
+            <li><a href="#" data-src="https://d13hbdfqmlhmre.cloudfront.net/05+Baby+Blue+ft.+Chance+The+Rapper+(Prod.+Mark+Ronson).mp3">Baby Blue ft. Chance The Rapper - Action Bronson</a></li>
+            <li><a href="#" data-src="https://d13hbdfqmlhmre.cloudfront.net/06+Uripi.m4a">Uripi - Tariro Negitare</a></li>
+            <li><a href="#" data-src="https://d13hbdfqmlhmre.cloudfront.net/07+Eid+Ma+Clack+Shaw.mp3">Eid Ma Clack Shaw - Bill Callahan</a></li>
+            <li><a href="#" data-src="https://d13hbdfqmlhmre.cloudfront.net/08+Leaf+Off+_+The+Cave.mp3">Leaf Off / The Cave - Jose Gonzalez</a></li>
+            <li><a href="#" data-src="https://d13hbdfqmlhmre.cloudfront.net/09+Anyone+Who+Knows+What+Love+Is+(Will+Understand).mp3">Anyone Who Knows What Love Is (Will Understand) - Irma Thomas</a></li>
+            <li><a href="#" data-src="https://d13hbdfqmlhmre.cloudfront.net/10+Loud+Places+%5Bft.+Romy%5D.mp3">Loud Places [ft. Romy] - Jamie xx</a></li>
+            <li><a href="#" data-src="11+The+three+sides+of+Audrey+and+why+she%27s+all+alone+now.mp3">The three sides of Audrey and why she's all alone now - Nicolas Jaar</a></li>
+            <li><a href="#" data-src="https://d13hbdfqmlhmre.cloudfront.net/12+No+one+is+looking+at+U.mp3">No one is looking at U - Nicolas Jaar</a></li>
+          </ol>
+        </div>
+      </div>
+  </div>
+
+
+<script>
+$( "#map-text" ).click(function() {
+  $( "#map" ).slideToggle('fast');
+});
+
+$( "#cover-text" ).click(function() {
+  $( "#cover" ).slideToggle('fast');
+});
+</script>
+
+  </body>
+</html>
