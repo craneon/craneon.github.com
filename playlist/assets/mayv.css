@@ -25,8 +25,7 @@ a:hover {color:#2C372E}
 .audiojs {
   width: 100%;
   }
-#player {border-left: 10px solid #000; margin-top:-35px; margin-left:-30px; padding-left:30px; padding-top:35px; height:100%; display: inline-block;
-position: absolute}
+#player {border-left: 10px solid #000; margin-top:-35px; margin-left:-30px; padding-left:30px; padding-top:35px; height:110%;}
 #player-bar {margin-top:40px;}
 img {width:100%}
 
