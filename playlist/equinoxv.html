@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Autumn, Equinox</title>
+    <script src="assets/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:900' rel='stylesheet' type='text/css'>
+    <meta content="width=device-width, initial-scale=0.6" name="viewport">
+    <script src="assets/audio2.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/equinoxv.css">
+    <script>
+      $(function() { 
+        // Setup the player to autoplay the next track
+        var a = audiojs.createAll({
+          trackEnded: function() {
+            var next = $('ol li.playing').next();
+            if (!next.length) next = $('ol li').first();
+            next.addClass('playing').siblings().removeClass('playing');
+            audio.load($('a', next).attr('data-src'));
+            audio.play();
+          }
+        });
+        
+        // Load in the first track
+        var audio = a[0];
+            first = $('ol a').attr('data-src');
+        $('ol li').first().addClass('playing');
+        audio.load(first);
+
+        // Load in a track on click
+        $('ol li').click(function(e) {
+          e.preventDefault();
+          $(this).addClass('playing').siblings().removeClass('playing');
+          audio.load($('a', this).attr('data-src'));
+          audio.play();
+        });
+        // Keyboard shortcuts
+        $(document).keydown(function(e) {
+          var unicode = e.charCode ? e.charCode : e.keyCode;
+             // right arrow
+          if (unicode == 39) {
+            var next = $('li.playing').next();
+            if (!next.length) next = $('ol li').first();
+            next.click();
+            // back arrow
+          } else if (unicode == 37) {
+            var prev = $('li.playing').prev();
+            if (!prev.length) prev = $('ol li').last();
+            prev.click();
+            // spacebar
+          } else if (unicode == 32) {
+            audio.playPause();
+          }
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <!-- <div id="wrapper"> -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8" id="main">
+          <h1>equinox, autumn v</h1>
+        </div>
+        <div class="col-md-4" id="player">
+          <audio preload id="player-bar"></audio>
+          <ol>
+            <li><a href="#" data-src="https://demulgvg6jukn.cloudfront.net/01+Sabali.mp3">Sabali - Amadou Mariam</a></li>
+            <li><a href="#" data-src="https://demulgvg6jukn.cloudfront.net/02+Black+Cat+White+Cat.mp3">Black Cat White Cat - Annalibera</a></li>
+            <li><a href="#" data-src="https://demulgvg6jukn.cloudfront.net/03+Repeat+Pleasure.mp3">Repeat Pleasure - How To Dress Well</a></li>
+            <li><a href="#" data-src="https://demulgvg6jukn.cloudfront.net/04+The+Innocents.mp3.m4a">The Innocents - Low</a></li>
+            <li><a href="#" data-src="https://demulgvg6jukn.cloudfront.net/05+Dripping.m4a">Dripping - Blonde Redhead</a></li>
+            <li><a href="#" data-src="https://demulgvg6jukn.cloudfront.net/06+Water+Fountain.mp3">Water Fountain - Tune-Yards</a></li>
+            <li><a href="#" data-src="https://demulgvg6jukn.cloudfront.net/07+Dawned+On+Me.mp3">Dawned On Me - Wilco</a></li>
+            <li><a href="#" data-src="https://demulgvg6jukn.cloudfront.net/08+Pretty+Pimpin.mp3">Pretty Pimpin - Kurt Vile</a></li>
+            <li><a href="#" data-src="https://demulgvg6jukn.cloudfront.net/09+Go+Outside.mp3">Go Outside - Cults</a></li>
+            <li><a href="#" data-src="https://demulgvg6jukn.cloudfront.net/10+The+Hills.mp3">The Hills - The Weeknd</a></li>
+            <li><a href="#" data-src="https://demulgvg6jukn.cloudfront.net/11+Demon.mp3">Demon - Shamir</a></li>
+            <li><a href="#" data-src="https://demulgvg6jukn.cloudfront.net/12+River.mp3">River - Ibeyi</a></li>
+            <li><a href="#" data-src="https://demulgvg6jukn.cloudfront.net/13+7_4+(Shoreline).mp3">7/4 (Shoreline) - Broken Social Scene</a></li>
+            <li><a href="#" data-src="https://demulgvg6jukn.cloudfront.net/14+17.mp3">17 - Youth Lagoon</a></li>
+            <li><a href="#" data-src="https://demulgvg6jukn.cloudfront.net/15+Tropic+Of+Cancer.mp3">Tropic of Cancer - Panda Bear</a></li>
+          </ol>
+        </div>
+      </div>
+  </div>
+
+
+<script>
+$( "#map-text" ).click(function() {
+  $( "#map" ).slideToggle('fast');
+});
+
+$( "#cover-text" ).click(function() {
+  $( "#cover" ).slideToggle('fast');
+});
+</script>
+
+  </body>
+</html>
