@@ -16,19 +16,20 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
-h1 { color: #ffffff; font-family: 'Playfair Display', serif; font-size: 80px; padding: 0px 15px 14px; margin-bottom: 35px; text-align: right; }
-h1 em { font-style: normal; color: #999; }
-h2 {font-family: 'Raleway', serif; font-size: 20px; padding: 5px 15px 5px; text-align:right; margin: 5px 0px 10px;}
+h1 { color: #ffffff; font-family: 'Playfair Display', serif; font-size: 80px; padding: 0px 15px 14px; margin-bottom: 10px; text-align: right; }
+h1 em {font-style: normal; color: #999; }
+h2 {color: #ffffff; font-family: 'Raleway', serif; font-size: 20px; padding: 5px 15px 5px; text-align:right; margin: 5px 0px 10px;}
 a:link, a:active, a:visited { color: #000; text-decoration: none; }
 a:hover {color:#2C372E}
 .container-fluid {padding: 30px 30px 0px 30px; height:100%;}
-#main {padding-right:30px;}
+#main {padding-right:30px; margin-bottom:40px;}
 .audiojs {
   width: 100%;
   }
 #player {background: rgba(127,127,127,0.7); margin-top:-35px; padding-left:30px; padding-top:35px; height:105%;}
 #player-bar {margin-top:40px; color: rgba(120,120,120,0.5)}
 img {width:100%}
+span {color: #fff;}
 
 
 /*#wrapper {width: 400px; margin: 40px auto; }*/
