@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>October V</title>
+    <script src="assets/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:900' rel='stylesheet' type='text/css'>
+    <meta content="width=device-width, initial-scale=0.6" name="viewport">
+    <script src="assets/audio2.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/octoberv.css">
+    <script>
+      $(function() { 
+        // Setup the player to autoplay the next track
+        var a = audiojs.createAll({
+          trackEnded: function() {
+            var next = $('ol li.playing').next();
+            if (!next.length) next = $('ol li').first();
+            next.addClass('playing').siblings().removeClass('playing');
+            audio.load($('a', next).attr('data-src'));
+            audio.play();
+          }
+        });
+        
+        // Load in the first track
+        var audio = a[0];
+            first = $('ol a').attr('data-src');
+        $('ol li').first().addClass('playing');
+        audio.load(first);
+
+        // Load in a track on click
+        $('ol li').click(function(e) {
+          e.preventDefault();
+          $(this).addClass('playing').siblings().removeClass('playing');
+          audio.load($('a', this).attr('data-src'));
+          audio.play();
+        });
+        // Keyboard shortcuts
+        $(document).keydown(function(e) {
+          var unicode = e.charCode ? e.charCode : e.keyCode;
+             // right arrow
+          if (unicode == 39) {
+            var next = $('li.playing').next();
+            if (!next.length) next = $('ol li').first();
+            next.click();
+            // back arrow
+          } else if (unicode == 37) {
+            var prev = $('li.playing').prev();
+            if (!prev.length) prev = $('ol li').last();
+            prev.click();
+            // spacebar
+          } else if (unicode == 32) {
+            audio.playPause();
+          }
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <!-- <div id="wrapper"> -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8" id="main">
+          <h1>october v</h1>
+          <h2><a href="https://www.google.com/maps/d/edit?mid=z0-UsCvVzVp8.kmBCbHwLWjx0" target="_blank"><span>map</span></a></h2>
+          <h2><a href="https://dl.dropboxusercontent.com/u/10691285/October%20V.zip"><span>download</span></a></h2>
+        </div>
+        <div class="col-md-4" id="player">
+          <audio preload id="player-bar"></audio>
+          <ol>
+            <li><a href="#" data-src="https://d120f9g01rcwhp.cloudfront.net/01+Morning+Side.mp3">Morning Side - Four Tet</a></li>
+            <li><a href="#" data-src="https://d120f9g01rcwhp.cloudfront.net/02+The+Ghost+On+The+Shore.mp3">The Ghost On The Shore - Lord Huron</a></li>
+            <li><a href="#" data-src="https://d120f9g01rcwhp.cloudfront.net/03+Letter.mp3">Letter - Yosi Horikawa</a></li>
+            <li><a href="#" data-src="https://d120f9g01rcwhp.cloudfront.net/04+Walkabout+(w_Noah+Lennox).mp3">Walkabout (w/ Noah Lennox) - Atlas Sound</a></li>
+            <li><a href="#" data-src="https://d120f9g01rcwhp.cloudfront.net/05+The+High.mp3">The High - Kelela</a></li>
+            <li><a href="#" data-src="https://d120f9g01rcwhp.cloudfront.net/06+Ashley.mp3">Ashley - Lido & Santell</a></li>
+            <li><a href="#" data-src="https://d120f9g01rcwhp.cloudfront.net/07+Freedom!+%2715.mp3">Freedom! '15 - !!!</a></li>
+            <li><a href="#" data-src="https://d120f9g01rcwhp.cloudfront.net/08+New+Rock.mp3">New Rock - Buffalo Daughter</a></li>
+            <li><a href="#" data-src="https://d120f9g01rcwhp.cloudfront.net/09+Happy.m4a">Happy - Vee Mukarati</a></li>
+            <li><a href="#" data-src="https://d120f9g01rcwhp.cloudfront.net/10+Cinnamon.mp3">Cinnamon - Palehound</a></li>
+            <li><a href="#" data-src="https://d120f9g01rcwhp.cloudfront.net/11+Stuck+on+the+Puzzle.m4a">Stuck on the Puzzle - Lily & Madeleine</a></li>
+            <li><a href="#" data-src="https://d120f9g01rcwhp.cloudfront.net/12+Let+Me+Know.m4a">Let Me Know - No Wyld</a></li>
+          </ol>
+        </div>
+      </div>
+  </div>
+
+
+<script>
+$( "#map-text" ).click(function() {
+  $( "#map" ).slideToggle('fast');
+});
+
+$( "#cover-text" ).click(function() {
+  $( "#cover" ).slideToggle('fast');
+});
+</script>
+
+  </body>
+</html>
