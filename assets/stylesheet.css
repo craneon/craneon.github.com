@@ -58,13 +58,12 @@ html, body {
 
 #logo {
   margin: auto;
-  margin-top: -100px;
   display: block;
   width: 200px;
 }
 
 #logo img {
-  display: block;
+  margin-top: -80px;
 }
 
 
